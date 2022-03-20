@@ -8,4 +8,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(_dirname, 'public', 'index.html'))
+})
+app.get('/notes', (req, res) => {
+  res.sendFile(path.join(_dirname, 'public', 'notes.html'))
+})
+
 app.listen(3000 || process.env.PORT)
