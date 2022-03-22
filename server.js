@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 
 app.use('/', htmlRoute)
-
 app.get('/api/notes', (req, res) => {
   res.json(notes)
 })
@@ -27,6 +26,5 @@ app.delete('/api/notes/:id', (req, res) => {
   notes = notes.filter(note => note.id !== req.params.id)
   res.json(notes)
 })
-
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log(`Listening in on PORT: ${PORT}`))
