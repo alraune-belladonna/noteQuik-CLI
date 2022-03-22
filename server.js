@@ -31,4 +31,5 @@ app.delete('/api/notes/:id', (req, res) => {
   res.json(notes)
 })
 
-app.listen(process.env.PORT || 3000)
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => console.log(`Listening in on PORT: ${PORT}`))
